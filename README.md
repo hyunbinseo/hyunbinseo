@@ -13,6 +13,8 @@
 
 공개되어 있는 사례들로 제 개발 가치관을 소개해 봅니다.
 
+---
+
 <details>
 	<summary>
 		<strong>만든 걸 공개하고, 꾸준히 유지보수합니다.</strong>
@@ -50,6 +52,8 @@
 - Tree Shaking 가능한 형태를 만드는 법
 
 </details>
+
+---
 
 <details>
 	<summary>
