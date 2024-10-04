@@ -21,7 +21,7 @@
 	</summary>
 	<br />
 
-"구글 캘린더에서 대한민국의 공휴일이 제대로 표시되지 않아"
+<mark>"구글 캘린더에서 대한민국의 공휴일이 제대로 표시되지 않아"</mark>
 
 "정부에서 배포하는 자료를 사용하면 이런 문제가 없을 텐데?"
 
@@ -36,20 +36,21 @@
 3. 패키지 배포 - 생성된 ICS, CSV, JSON 파일을 제공함
 4. 패키지 배포 - 자바스크립트 `Date`이 공휴일인지 확인
 
-내가 필요해서 만든 걸 굳이 숨겨둘 이유를 찾지 못했습니다.
+<mark>"기왕 시간을 들인 것, 조금만 더 투자해서 공개해 두면 누군가가 도움을 받지 않을까?"</mark>
 
-"기왕 시간을 들인 것, 조금만 더 투자해서 공개해 두면 누군가가 도움을 받지 않을까?"
+"누가 써주지 않아도, 미래의 내가 이곳을 되찾았을 때 잘 정리돼 있으면 좋지 않을까?"
 
-"그렇지 못해도 미래의 내가 이 프로젝트를 되찾았을 때 잘 정리돼 있으면 좋지 않을까?"
-
-이렇게 생각했고, 덕분에 정말 많이 배웠습니다.
+내가 필요해서 만든 걸 숨겨둘 이유를 찾지 못했고, 그 과정에서 오히려 많이 배웠습니다.
 
 - npm 상에 패키지를 배포하는 방법
 - CJS, ESM 환경을 모두 지원하는 방법
+- 처음부터 API 설계를 잘해야 하는 이유
+- Tree Shaking 가능한 형태를 만드는 법
 - 라이브러리에 JSDoc을 사용하는 이유
 - 유닛 테스트 (Vitest, node:test)
 - Provenance Statements (CI 배포)
-- Tree Shaking 가능한 형태를 만드는 법
+
+새로 배운 걸 적용해 볼 수 있는, 꾸준히 고치고 기울 수 있는 장(場)이 생겨서 행복합니다.
 
 </details>
 
@@ -57,9 +58,36 @@
 
 <details>
 	<summary>
-		<strong>웹을 사랑합니다.</strong>
+		<strong>의존성을 최소화하려고 노력합니다.</strong>
 	</summary>
+	<br />
 
-자모야 모여라 (작성 예정)
+작성 중입니다.
+
+<!-- Fetch API / new-request -->
+<!-- JSDoc -> --experimental-strip-types -->
+
+<!-- dotenv -> --env-file -->
+<!-- https://github.com/sveltejs/kit/pull/12320 -->
+
+</details>
+
+---
+
+<details>
+	<summary>
+		<strong>기여할 수 있는 방법으로 기록합니다.</strong>
+	</summary>
+	<br />
+
+작성 중입니다.
+
+<!-- https://github.com/sveltejs/svelte/pull/8200 -->
+<!-- https://github.com/sveltejs/kit/pull/11130 -->
+<!-- https://github.com/sveltejs/prettier-plugin-svelte/pull/409 -->
+
+<!-- https://github.com/hyunbinseo/tsup-template -->
+<!-- https://github.com/hyunbinseo/pm2-ecosystem -->
+<!-- https://github.com/hyunbinseo/koddiud-ongothic -->
 
 </details>
