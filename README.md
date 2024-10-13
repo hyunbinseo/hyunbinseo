@@ -63,16 +63,38 @@
 
 <details>
 	<summary>
-		<strong>의존성을 최소화하려고 노력합니다.</strong>
+		<strong>타입스크립트 타입과 DX에 진심입니다.</strong>
 	</summary>
 	<br />
 
 작성 중입니다.
 
-<!-- Fetch API / new-request -->
-<!-- JSDoc -> --experimental-strip-types -->
+<!-- new-request / Fetch API with types -->
+<!-- https://github.com/hyunbinseo/new-request#readme -->
+
+<!-- @hyunbinseo/tools.formDataToObject -->
+<!-- https://github.com/hyunbinseo/tools -->
+
+</details>
+
+---
+
+<details>
+	<summary>
+		<strong>코드와 의존성을 최소화하려고 노력합니다.</strong>
+	</summary>
+	<br />
+
+작성 중입니다.
+
+<!-- https://github.com/facebook/react-native-website/pull/4247 -->
+
+<!-- Browser -->
+<!-- https://github.com/hyunbinseo/svelte-html-modal -->
+<!-- https://github.com/sveltejs/svelte/pull/8200 -->
 
 <!-- dotenv -> --env-file -->
+<!-- JSDoc -> --experimental-strip-types -->
 <!-- https://github.com/sveltejs/kit/pull/12320 -->
 
 </details>
@@ -87,12 +109,9 @@
 
 작성 중입니다.
 
-<!-- https://github.com/sveltejs/svelte/pull/8200 -->
 <!-- https://github.com/sveltejs/kit/pull/11130 -->
-<!-- https://github.com/sveltejs/prettier-plugin-svelte/pull/409 -->
 
-<!-- https://github.com/hyunbinseo/tsup-template -->
-<!-- https://github.com/hyunbinseo/pm2-ecosystem -->
-<!-- https://github.com/hyunbinseo/koddiud-ongothic -->
+<!-- https://github.com/sveltejs/kit/pull/10410#issuecomment-1810291062 -->
+<!-- https://github.com/sveltejs/prettier-plugin-svelte/pull/409 -->
 
 </details>
