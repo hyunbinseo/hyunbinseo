@@ -1,17 +1,19 @@
 # 안녕하세요! 😀
 
+타입스크립트 웹 서버부터 `<form>`까지 작성하는 풀스택 웹 개발자입니다.
+
 [English LinkedIn Profile]. Global projects have English README.
 
 [English LinkedIn profile]: https://www.linkedin.com/in/hyunbinseo/?locale=en_US
 
-타입스크립트, Svelte, CSS를 모두 작성하는 풀스택 웹 개발자입니다.
-
+- `SvelteKit` `Node.js`
+- `Svelte` `Vanilla HTML`
+- `Tailwind CSS` `Vanilla CSS`
+- `Drizzle ORM | Kit` `SQLite`
 - `TypeScript` `JavaScript with JSDoc`
-- `SvelteKit` `Tailwind CSS` `HTML` `CSS`
 - `Cloudflare` `Vultr` `Amazon Lightsail`
-- `Node.js` `Drizzle ORM / Kit` `SQLite`
 
-공개되어 있는 사례들로 제 개발 가치관을 소개해 봅니다.
+공개되어 있는 사례들을 바탕으로 제 개발 가치관을 소개합니다.
 
 ---
 
