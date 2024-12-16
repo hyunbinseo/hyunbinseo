@@ -1,121 +1,132 @@
-# 안녕하세요! 😀
+# Hello! 안녕하세요! 🍊
 
-타입스크립트 웹 서버부터 `<form>`까지 작성하는 풀스택 웹 개발자입니다.
+![Svelte](https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white) ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-[English LinkedIn Profile]. Global projects have English README.
+Solving Problems with Open Source. [한글 프로젝트](#대한민국의-공휴일)
 
-[English LinkedIn profile]: https://www.linkedin.com/in/hyunbinseo/?locale=en_US
+Contact: [LinkedIn], [Email]
 
-- `SvelteKit` `Node.js`
-- `Svelte` `Vanilla HTML`
-- `Tailwind CSS` `Vanilla CSS`
-- `Drizzle ORM | Kit` `SQLite`
-- `TypeScript` `JavaScript with JSDoc`
-- `Cloudflare` `Vultr` `Amazon Lightsail`
+[LinkedIn]: https://www.linkedin.com/in/hyunbinseo
+[Email]: mailto:hyunbin@duck.com
 
-공개되어 있는 사례들을 바탕으로 제 개발 가치관을 소개합니다.
+## Self-host Svelte Applications
 
----
+Almost as simple as Vercel and Cloudflare Pages. [Learn more](https://github.com/hyunbinseo/svelte-kitty#readme)
 
-<details>
-	<summary>
-		<strong>만든 걸 공개하고, 꾸준히 유지보수합니다.</strong>
-	</summary>
-	<br />
-
-```
-"구글, 애플 캘린더에서 빨간 날이 제대로 표시되지 않아"
+```shell
+npm create svelte-kitty # setup project and database
+npm run deploy # build and deploy to a Linux server
 ```
 
-`"구글, 애플 캘린더에서 빨간 날이 제대로 표시되지 않아"`
+- 🔒 Includes email based authentication, user and role management.
+- 📦 Fully configured [Drizzle ORM], [Tailwind CSS], [Valibot] out-of-the box.
 
-[대한민국의 공휴일] 프로젝트는 이 문제를 해결하기 위해 시작되었습니다.
+[Drizzle ORM]: https://orm.drizzle.team/
+[Tailwind CSS]: https://tailwindcss.com/
+[Valibot]: https://valibot.dev/
 
-[대한민국의 공휴일]: https://github.com/hyunbinseo/holidays-kr#readme
+## Better DX for Svelte Form and Modal
 
-처음에는 정부에서 배포하는 '월력요항'을 CSV로 가공하는 것이 전부였습니다.
+Form state management. Disable buttons during submission. [Learn more](https://github.com/hyunbinseo/svelte-form-enhanced#readme)
 
-이 파일을 Google 캘린더에서 불러오면 공휴일이 제대로 표시됐기 때문입니다.
+```svelte
+<script>
+  import { enhance } from "$app/forms";
+  import { createFormHelper } from "svelte-form-enhanced";
+  const f = createFormHelper();
+</script>
 
-그랬던 프로젝트가 지금은 이렇게 발전했습니다.
+<form method="post" use:enhance={f.submitFunction}>
+  <button disabled={f.state === "submitting"}>
+    {f.state === "submitting" ? "Submitting" : "Submit"}
+  </button>
+</form>
+```
 
-1. 누구나 구독할 수 있는 공개 캘린더 링크 제공
-2. Date 객체가 공휴일인지 판단하는 패키지 제공
-3. CSV 이외에도 JSON, ICS 형태의 파일 제공
+Open and close an HTML [modal](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) by toggling a boolean state. [Demo](https://svelte.dev/playground/7ffaea50f0c0466ea2b4be8e0aee20dd?version=5.2.7)
 
-<mark>"기왕 시간을 들인 것, 깔끔하게 정리해 두면 누군가는 도움을 받지 않을까?"</mark>
+```svelte
+<script>
+  import { Modal } from "svelte-html-modal";
+  let isOpen = $state(false);
+</script>
 
-가르치는 것이 최고의 공부법이란 얘기가 있습니다.
+<button type="button" onclick={() => (isOpen = true)}>Open Modal</button>
 
-코드와 리드미를 작성해 공개하는 것도 마찬가지 효과가 있다고 생각합니다.
+<div class="modal-wrapper">
+  <Modal bind:isOpen closeOnBackdropClick={true}>
+    <button type="button" onclick={() => (isOpen = false)}>Close</button>
+  </Modal>
+</div>
+```
 
-누구나 손쉽게, 문제없이 쓸 수 있는 제품을 만들면서 정말 많이 배웠습니다.
+## REST API without ANY Dependencies
 
-- 처음부터 API를 잘 설계해야 하는 이유
-- npm 상에 패키지를 배포하는 방법
-- Provenance Statements 받는 방법
-- CJS, ESM 환경을 모두 지원하는 방법
-- Tree Shaking 가능한 형태를 만드는 방법
-- 유닛 테스트 작성 및 활용 방법 (node:test)
-- 라이브러리들이 JSDoc을 사용하는 이유
+Supports [Twilio] SMS, [SendGrid] and [Postmark] email, and [more](https://github.com/hyunbinseo/new-request#services).
 
-그래서 지금도 새로운 걸 배우면 바로바로 적용해 보면서 다듬고 있습니다.
+[Twilio]: https://www.twilio.com/en-us/messaging
+[SendGrid]: https://sendgrid.com/en-us
+[Postmark]: https://postmarkapp.com/
 
-</details>
+```js
+import { SendGridSendEmail3 as sendEmail } from "new-request";
 
----
+const response = await sendEmail({
+  // Utilizes the Fetch API and TypeScript types.
+  // Everything is autocompleted and type-checked.
+});
+```
 
-<details>
-	<summary>
-		<strong>타입스크립트 타입과 DX에 진심입니다.</strong>
-	</summary>
-	<br />
+## Bulk Download Zoom Cloud Recordings
 
-작성 중입니다.
+Backup company recordings with a single command. [Learn more](https://github.com/hyunbinseo/zoom-rec-dl#readme)
 
-<!-- new-request / Fetch API with types -->
-<!-- https://github.com/hyunbinseo/new-request#readme -->
+```shell
+# create a urls.txt file with the recording URLs
+npx zoom-rec-dl@latest # then start the download
+```
 
-<!-- @hyunbinseo/tools.formDataToObject -->
-<!-- https://github.com/hyunbinseo/tools -->
+## CSS Optimized for Print and Screen
 
-</details>
+Pages are displayed like PDF viewers and word processors. [Demo](https://demo.hyunbin.page/print-friendly)
 
----
+```html
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
+  </head>
+  <body>
+    <div>
+      <div class="page">/* Add content */</div>
+    </div>
+  </body>
+</html>
+```
 
-<details>
-	<summary>
-		<strong>코드와 의존성을 최소화하려고 노력합니다.</strong>
-	</summary>
-	<br />
+## 대한민국의 공휴일
 
-작성 중입니다.
+월력요항 기반의 오류 없는 공개 캘린더. [더 알아보기](https://github.com/hyunbinseo/holidays-kr#readme)
 
-<!-- https://github.com/facebook/react-native-website/pull/4247 -->
+- `JSON`, `CSV`, `ICS` 파일 및 호스팅 제공
+- 캘린더 구독 제공 (구글, 애플 캘린더 지원)
 
-<!-- Browser -->
-<!-- https://github.com/hyunbinseo/svelte-html-modal -->
-<!-- https://github.com/sveltejs/svelte/pull/8200 -->
+```js
+import { isHoliday } from "@hyunbinseo/holidays-kr";
+isHoliday(new Date("2025-01-01T00:00:00+0900")); // true - 공휴일입니다.
+isHoliday(new Date("2025-01-02T00:00:00+0900")); // false - 공휴일이 아닙니다.
+```
 
-<!-- dotenv -> --env-file -->
-<!-- JSDoc -> --experimental-strip-types -->
-<!-- https://github.com/sveltejs/kit/pull/12320 -->
+## 자모야 모여라
 
-</details>
+프로그램 설치 없는 파일명 자소 분리 해결. [웹페이지](https://jamoya.one/)
 
----
+```diff
+# 파일을 끌어다 놓으면 수정된 파일이 다운로드 됩니다.
+- ㅍㅏㅇㅣㄹㅁㅕㅇ.hwp
++ 파일명.hwp
+```
 
-<details>
-	<summary>
-		<strong>기여할 수 있는 방법으로 기록합니다.</strong>
-	</summary>
-	<br />
+## 민방위.kr
 
-작성 중입니다.
-
-<!-- https://github.com/sveltejs/kit/pull/11130 -->
-
-<!-- https://github.com/sveltejs/kit/pull/10410#issuecomment-1810291062 -->
-<!-- https://github.com/sveltejs/prettier-plugin-svelte/pull/409 -->
-
-</details>
+전국에서 참여 가능한 민방위 훈련 일정 조회. [웹페이지](https://민방위.kr/)
