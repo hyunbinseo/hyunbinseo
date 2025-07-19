@@ -7,7 +7,7 @@ Solving Problems with Open Source. [한글 프로젝트](#대한민국의-공휴
 Contact: [LinkedIn], [Email]
 
 [LinkedIn]: https://www.linkedin.com/in/hyunbinseo
-[Email]: mailto:hyunbin@duck.com
+[Email]: mailto:contact@hyunb.in
 
 ## Self-host Svelte Applications
 
