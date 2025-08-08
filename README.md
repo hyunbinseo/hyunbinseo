@@ -69,7 +69,7 @@ Supports [Twilio] SMS, [SendGrid] and [Postmark] email, and [more](https://githu
 [Postmark]: https://postmarkapp.com/
 
 ```js
-import { SendGridSendEmail3 as sendEmail } from "new-request";
+import { sendEmail } from "new-request/email/send-grid/v3/POST/index.js";
 
 const response = await sendEmail({
   // Utilizes the Fetch API and TypeScript types.
