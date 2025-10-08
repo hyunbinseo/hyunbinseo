@@ -88,7 +88,7 @@ npx zoom-rec-dl@latest # then start the download
 
 ## CSS Optimized for Print and Screen
 
-Pages are displayed like PDF viewers and word processors. [Demo](https://demo.hyunbin.page/print-friendly)
+Pages are displayed like PDF viewers and word processors. [Demo](https://hyunb.in/print-friendly)
 
 ```html
 <html>
