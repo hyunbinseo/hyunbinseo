@@ -31,14 +31,14 @@ Form state management. Disable buttons during submission. [Learn more](https://g
 
 ```svelte
 <script>
-  import { enhance } from "$app/forms";
-  import { createFormHelper } from "svelte-form-enhanced";
+  import { enhance } from '$app/forms';
+  import { createFormHelper } from 'svelte-form-enhanced';
   const f = createFormHelper();
 </script>
 
 <form method="post" use:enhance={f.submitFunction}>
-  <button disabled={f.state === "submitting"}>
-    {f.state === "submitting" ? "Submitting" : "Submit"}
+  <button disabled={f.state === 'submitting'}>
+    {f.state === 'submitting' ? 'Submitting' : 'Submit'}
   </button>
 </form>
 ```
@@ -47,7 +47,7 @@ Open and close an HTML [modal](https://developer.mozilla.org/en-US/docs/Web/API/
 
 ```svelte
 <script>
-  import { Modal } from "svelte-html-modal";
+  import { Modal } from 'svelte-html-modal';
   let isOpen = $state(false);
 </script>
 
@@ -69,7 +69,7 @@ Supports [Twilio] SMS, [SendGrid] and [Postmark] email, and [more](https://githu
 [Postmark]: https://postmarkapp.com/
 
 ```js
-import { sendEmail } from "new-request/email/send-grid/v3/POST/index.js";
+import { sendEmail } from 'new-request/email/send-grid/v3/POST/index.js';
 
 const response = await sendEmail({
   // Utilizes the Fetch API and TypeScript types.
@@ -112,9 +112,9 @@ Pages are displayed like PDF viewers and word processors. [Demo](https://hyunb.i
 - 캘린더 구독 제공 (구글, 애플 캘린더 지원)
 
 ```js
-import { isHoliday } from "@hyunbinseo/holidays-kr";
-isHoliday(new Date("2025-01-01T00:00:00+0900")); // true - 공휴일입니다.
-isHoliday(new Date("2025-01-02T00:00:00+0900")); // false - 공휴일이 아닙니다.
+import { isHoliday } from '@hyunbinseo/holidays-kr';
+isHoliday(new Date('2025-01-01T00:00:00+0900')); // true - 공휴일입니다.
+isHoliday(new Date('2025-01-02T00:00:00+0900')); // false - 공휴일이 아닙니다.
 ```
 
 ## 자모야 모여라
