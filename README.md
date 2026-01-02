@@ -1,80 +1,23 @@
 # Hello! 안녕하세요! 🍊
 
-![Svelte](https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white) ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-
 Solving Problems with Open Source. [한글 프로젝트](#대한민국의-공휴일)
 
-Contact: [LinkedIn], [Email]
-
-[LinkedIn]: https://www.linkedin.com/in/hyunbinseo
-[Email]: mailto:contact@hyunb.in
-
-## Self-host Svelte Applications
-
-Almost as simple as Vercel and Cloudflare Pages. [Learn more](https://github.com/hyunbinseo/svelte-kitty#readme)
-
-```shell
-npm create svelte-kitty # setup project and database
-npm run deploy # build and deploy to a Linux server
-```
-
-- 🔒 Includes email based authentication, user and role management.
-- 📦 Fully configured [Drizzle ORM], [Tailwind CSS], [Valibot] out-of-the box.
-
-[Drizzle ORM]: https://orm.drizzle.team/
-[Tailwind CSS]: https://tailwindcss.com/
-[Valibot]: https://valibot.dev/
-
-## Better DX for Svelte Form and Modal
-
-Form state management. Disable buttons during submission. [Learn more](https://github.com/hyunbinseo/svelte-form-enhanced#readme)
-
-```svelte
-<script>
-  import { enhance } from '$app/forms';
-  import { createFormHelper } from 'svelte-form-enhanced';
-  const f = createFormHelper();
-</script>
-
-<form method="post" use:enhance={f.submitFunction}>
-  <button disabled={f.state === 'submitting'}>
-    {f.state === 'submitting' ? 'Submitting' : 'Submit'}
-  </button>
-</form>
-```
-
-Open and close an HTML [modal](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) by toggling a boolean state. [Demo](https://svelte.dev/playground/7ffaea50f0c0466ea2b4be8e0aee20dd?version=5.2.7)
-
-```svelte
-<script>
-  import { Modal } from 'svelte-html-modal';
-  let isOpen = $state(false);
-</script>
-
-<button type="button" onclick={() => (isOpen = true)}>Open Modal</button>
-
-<div class="modal-wrapper">
-  <Modal bind:isOpen closeOnBackdropClick={true}>
-    <button type="button" onclick={() => (isOpen = false)}>Close</button>
-  </Modal>
-</div>
-```
+- [Email](mailto:contact@hyunb.in)
+- [LinkedIn](https://www.linkedin.com/in/hyunbinseo)
+- [홈페이지](https://hyunb.in/)
 
 ## REST API without ANY Dependencies
 
-Supports [Twilio] SMS, [SendGrid] and [Postmark] email, and [more](https://github.com/hyunbinseo/new-request#services).
+Supports [Twilio], [SendGrid], [Postmark], and [more](https://github.com/hyunbinseo/new-request#services).
 
 [Twilio]: https://www.twilio.com/en-us/messaging
 [SendGrid]: https://sendgrid.com/en-us
 [Postmark]: https://postmarkapp.com/
 
 ```js
-import { sendEmail } from 'new-request/email/send-grid/v3/POST/index.js';
+import { sendEmail } from 'new-request/email/send-grid/v3/POST';
 
-const response = await sendEmail({
-  // Utilizes the Fetch API and TypeScript types.
-  // Everything is autocompleted and type-checked.
-});
+const response = await sendEmail({}); // autocompleted and type-checked
 ```
 
 ## Bulk Download Zoom Cloud Recordings
@@ -88,20 +31,18 @@ npx zoom-rec-dl@latest # then start the download
 
 ## CSS Optimized for Print and Screen
 
-Pages are displayed like PDF viewers and word processors. [Demo](https://hyunb.in/print-friendly)
+Display HTML similar to PDF viewers and word processors. [Demo](https://hyunb.in/print-friendly)
 
 ```html
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
-  </head>
-  <body>
-    <div>
-      <div class="page">/* Add content */</div>
-    </div>
-  </body>
-</html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.4/index.css" />
+</head>
+<body>
+  <div class="page-container">
+    <div class="page">/* Add content */</div>
+  </div>
+</body>
 ```
 
 ## 대한민국의 공휴일
@@ -109,7 +50,7 @@ Pages are displayed like PDF viewers and word processors. [Demo](https://hyunb.i
 월력요항 기반의 오류 없는 공개 캘린더. [더 알아보기](https://github.com/hyunbinseo/holidays-kr#readme)
 
 - `JSON`, `CSV`, `ICS` 파일 및 호스팅 제공
-- 캘린더 구독 제공 (구글, 애플 캘린더 지원)
+<!--- 구독용 캘린더 제공 (구글, 애플 캘린더 지원)-->
 
 ```js
 import { isHoliday } from '@hyunbinseo/holidays-kr';
